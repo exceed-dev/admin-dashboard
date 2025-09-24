@@ -1,0 +1,142 @@
+@layer fonts {
+    /* plus-jakarta-sans-regular - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: "Plus Jakarta Sans";
+        font-style: normal;
+        font-weight: 400;
+        src: url("../fonts/plus-jakarta-sans-v12-latin-regular.woff2")
+            format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+    /* plus-jakarta-sans-600 - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: "Plus Jakarta Sans";
+        font-style: normal;
+        font-weight: 600;
+        src: url("../fonts/plus-jakarta-sans-v12-latin-600.woff2")
+            format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+    /* plus-jakarta-sans-700 - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: "Plus Jakarta Sans";
+        font-style: normal;
+        font-weight: 700;
+        src: url("../fonts/plus-jakarta-sans-v12-latin-700.woff2")
+            format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+}
+
+@layer typography {
+    :root {
+        /* font family */
+        --ff-plus-jakarta-sans: "Plus Jakarta Sans";
+        /* font weight */
+        --fw-regular: 400;
+        --fw-semibold: 600;
+        --fw-bold: 700;
+        /* font size */
+        --fs-24: calc(24 / 16 * 1rem);
+        --fs-20: calc(20 / 16 * 1rem);
+        --fs-18: calc(18 / 16 * 1rem);
+        --fs-16: calc(16 / 16 * 1rem);
+        --fs-14: calc(14 / 16 * 1rem);
+    }
+
+    body {
+        --fs-body: var(--fs-16);
+
+        font-family: var(--ff-plus-jakarta-sans), Arial, Helvetica, sans-serif;
+        font-size: var(--fs-body);
+        font-weight: var(--fw-regular);
+        line-height: 1.5;
+    }
+
+    h2 {
+        --fs-h2: var(--fs-24);
+
+        font-size: var(--fs-h2);
+        font-weight: var(--fw-semibold);
+        line-height: 1.2;
+    }
+
+    h3 {
+        --fs-h3: var(--fs-20);
+
+        font-size: var(--fs-h3);
+        font-weight: var(--fw-semibold);
+    }
+
+    button {
+        --fs-button: var(--fs-16);
+
+        font-family: var(--ff-plus-jakarta-sans), Arial, Helvetica, sans-serif;
+        font-size: var(--fs-button);
+        font-weight: var(--fw-semibold);
+        line-height: 1.2;
+    }
+}
+
+@layer color {
+    :root {
+        --color-white: hsl(0, 0%, 100%);
+        --color-black: hsl(0, 0%, 0%);
+        --color-teal: hsl(174, 59%, 56%);
+        --color-gray-900: hsl(218, 23%, 23%);
+        --color-gray-700: hsl(218, 8%, 46%);
+        --color-gray-100: hsl(210, 17%, 98%);
+        --color-gradient-white: linear-gradient(
+            to bottom right,
+            hsla(0, 0%, 100%, 0.82),
+            hsla(0, 0%, 100%, 0.8)
+        );
+    }
+
+    body {
+        --color-body-bg: var(--color-gray-100);
+        --color-body-text: var(--color-gray-700);
+
+        background: var(--color-body-bg);
+        color: var(--color-body-text);
+    }
+
+    a {
+        color: inherit;
+    }
+}
+
+@layer base {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    * {
+        margin: 0;
+    }
+
+    input,
+    button {
+        padding: 0;
+        display: block;
+        outline: none;
+    }
+
+    img,
+    svg {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
