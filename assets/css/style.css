@@ -153,13 +153,6 @@
         gap: calc(40 / 16 * 1rem);
     }
 
-    .side-nav {
-        width: 280px;
-        background-color: red;
-        grid-area: sidenav;
-        height: 100vh;
-    }
-
     .main {
         width: 1520px;
         height: 100vh;
@@ -354,6 +347,88 @@
             -webkit-box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.02);
             -moz-box-shadow: 0 4px 6px hsla(0 0%, 0%, 0.02);
             cursor: pointer;
+        }
+    }
+}
+
+@layer sidenav {
+    .side-nav {
+        width: calc(280 / 16 * 1rem);
+        grid-area: sidenav;
+        position: relative;
+    }
+
+    .fixed {
+        position: fixed;
+        width: calc(280 / 16 * 1rem);
+    }
+
+    .logo-container {
+        --color-logo-icon: var(--color-teal);
+        --color-logo-text: var(--color-gray-900);
+
+        display: block;
+        margin-bottom: calc(80 / 16 * 1rem);
+    }
+
+    .logo {
+        width: calc(153 / 16 * 1rem);
+
+        > .icon {
+            fill: var(--color-logo-icon);
+        }
+
+        > .text {
+            fill: var(--color-logo-text);
+        }
+    }
+
+    .nav-container {
+        --color-nav-text-secondary: var(--color-gray-700);
+        --color-nav-text-primary: var(--color-gray-900);
+        --color-nav-bg-primary: var(--color-white);
+        --color-nav-icon-primary: var(--color-white);
+        --color-nav-icon-secondary: var(--color-teal);
+
+        display: grid;
+        gap: calc(64 / 16 * 1rem);
+    }
+
+    .nav-link {
+        padding: calc(12 / 16 * 1rem) 1rem;
+
+        display: flex;
+        align-items: center;
+        gap: calc(12 / 16 * 1rem);
+        color: var(--color-nav-text-secondary);
+        font-weight: var(--fw-semibold);
+
+        .icon {
+            fill: var(--color-nav-icon-secondary);
+            background-color: var(--color-nav-icon-primary);
+            width: 2rem;
+            padding: 0.5rem;
+            border-radius: calc(12 / 16 * 1rem);
+        }
+
+        &:hover {
+            width: calc(240 / 16 * 1rem);
+            padding: calc(12 / 16 * 1rem) 1rem;
+            background: var(--color-nav-bg-primary);
+            color: var(--color-nav-text-primary);
+            box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.02);
+            -webkit-box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.02);
+            border-radius: 1rem;
+        }
+
+        &.active {
+            width: calc(240 / 16 * 1rem);
+            padding: calc(12 / 16 * 1rem) 1rem;
+            background: var(--color-nav-bg-primary);
+            color: var(--color-nav-text-primary);
+            box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.02);
+            -webkit-box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.02);
+            border-radius: 1rem;
         }
     }
 }
