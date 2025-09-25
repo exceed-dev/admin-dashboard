@@ -315,6 +315,19 @@
 
     .user-data {
         .name {
+            width: 5rem;
+            height: 5rem;
+            object-fit: cover;
+            overflow: hidden;
+            border-radius: 1rem;
+
+            .image {
+                width: calc(140 / 16 * 1rem);
+                height: auto;
+                position: relative;
+                top: -45px;
+                left: -29px;
+            }
             color: var(--color-header-text-variant);
             font-size: var(--fs-18);
             font-weight: var(--fw-bold);
@@ -653,8 +666,53 @@
     }
 
     .trending-container {
-        background-color: green;
+        width: calc(480 / 16 * 1rem);
+    }
 
-        height: calc(700 / 16 * 1rem);
+    .accounts-container {
+        display: flex;
+        flex-direction: column;
+        gap: calc(24 / 16 * 1rem);
+        padding: 2rem;
+        background: linear-gradient(
+            to bottom right,
+            hsla(0, 0%, 100%, 0.82),
+            hsla(0, 0%, 100%, 0.8)
+        );
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 1rem;
+    }
+
+    .account {
+        --color-title: var(--color-gray-900);
+        --color-text: var(--color-gray-700);
+        --fs-title: var(--fs-18);
+
+        display: flex;
+        align-items: center;
+        gap: calc(12 / 16 * 1rem);
+    }
+
+    .account > .image-container {
+        width: 4.2rem;
+        height: 4.2rem;
+        object-fit: cover;
+        overflow: hidden;
+        border-radius: 1rem;
+
+        .image {
+            width: 100%;
+            height: auto;
+            /* position: relative;
+            top: -45px;
+            left: -29px; */
+        }
+    }
+
+    .account > .text-container {
+        .title {
+            margin-bottom: 0;
+        }
     }
 }
